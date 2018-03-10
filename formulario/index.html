@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Formulario</title>
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<h1 class="page-header">Practica JSON</h1>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="panel panel-default">
+					<div class="panel-heading">Evento</div>
+					<div class="panel-body">
+						<form id="formEvento">
+							<div class="form-group">
+								<label for="nombre">Nombre</label>
+								<input type="text" class="form-control" id="nombre" placeholder="Nombre del evento">
+							</div>
+							<div class="form-group">
+								<label for="descripcion">Descripción</label>
+								<input type="text" class="form-control" id="descripcion" placeholder="Descripción del evento">
+							</div>
+							<div class="form-group">
+								<label for="direccion">Dirección</label>
+								<input type="text" class="form-control" id="direccion" placeholder="Dirección del evento">
+							</div>
+							<div class="form-group">
+								<label for="ciudad">Ciudad</label>
+								<select class="form-control" id="ciudad" name="ciudad">
+									<option>CDE</option>
+									<option>Pdte.Franco</option>
+									<option>Minga Guasu</option>
+									<option>Hernandarias</option>
+									<option>Asunción</option>
+								</select>
+							</div>
+							<button type="button" class="btn btn-success" onclick="enviarDatos();">Enviar</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		//console.log(document);
+		var nombre = document.getElementById("nombre");
+		console.log(nombre);
+
+		function enviarDatos(){
+			console.log("Datos enviados");
+			var nombre 		= document.getElementById("nombre").value;
+			console.log(nombre);
+			console.log("-----------------------");
+			console.log(document.getElementsByClassName("form-control"));
+			console.log("-----------------------");
+			var descripcion = document.getElementById("descripcion").value;
+			var direccion 	= document.getElementById("direccion").value;
+			//var ciudad 		= document.getElementById("ciudad").value;
+			var ciudad 		= document.getElementById("formEvento").elements.namedItem("ciudad").selectedIndex;
+			console.log(nombre + " " + descripcion + " " + direccion + " " + ciudad);
+		}
+	</script>
+</body>
+</html>
